@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vIr-Tl-cOO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Settings-->
+        <scene sceneID="frZ-5c-IuJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzX-Ty-h2E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Ben-AC-XRi" customClass="SettingsVC" customModule="Breakout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vig-9F-qnd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Balls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zay-Nb-nCW">
+                                <rect key="frame" x="4" y="20" width="184" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dse-tl-oG3" userLabel="Number of Balls Controler">
+                                <rect key="frame" x="16" y="48.5" width="343" height="29"/>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                    <segment title="4"/>
+                                    <segment title="5"/>
+                                    <segment title="6"/>
+                                </segments>
+                                <connections>
+                                    <action selector="numberOfBallsChanged:" destination="Ben-AC-XRi" eventType="valueChanged" id="7PU-gp-TzT"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BhG-Mv-9tZ">
+                                <rect key="frame" x="4" y="90" width="367" height="145.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gS5-Vo-9lv">
+                                        <rect key="frame" x="0.0" y="0.0" width="367" height="29"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="HFl-tm-o6V">
+                                                <rect key="frame" x="0.0" y="4.5" width="173.5" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Bricks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiI-y1-RJi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pjQ-uc-WuQ">
+                                                <rect key="frame" x="193.5" y="0.0" width="173.5" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qR-zl-1vB" userLabel="Number of Blocks Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minimumValue="5" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="geI-tE-x8H" userLabel="Number of Bricks Stepper">
+                                                        <rect key="frame" x="79.5" y="0.0" width="94" height="29"/>
+                                                        <connections>
+                                                            <action selector="numberofBricksControler:" destination="Ben-AC-XRi" eventType="valueChanged" id="BHB-GG-IPN"/>
+                                                        </connections>
+                                                    </stepper>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oN3-BR-pkT">
+                                        <rect key="frame" x="0.0" y="39" width="367" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bounciness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptR-Kn-sy3">
+                                                <rect key="frame" x="0.0" y="0.0" width="181" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.10000000000000001" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="8fA-CZ-vNL" userLabel="Bounciness Slider">
+                                                <rect key="frame" x="184" y="0.0" width="185" height="31"/>
+                                                <connections>
+                                                    <action selector="bouncinessChanged:" destination="Ben-AC-XRi" eventType="valueChanged" id="pfA-d4-WRe"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="5Jy-V2-zPc">
+                                        <rect key="frame" x="0.0" y="79" width="367" height="30.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paddle Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2r-Oy-2L9">
+                                                <rect key="frame" x="0.0" y="5" width="181" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.10000000000000001" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FUE-vq-Tq3" userLabel="Paddle Slider">
+                                                <rect key="frame" x="184" y="0.0" width="185" height="31.5"/>
+                                                <connections>
+                                                    <action selector="paddleSizeChanged:" destination="Ben-AC-XRi" eventType="valueChanged" id="jYD-EL-KPd"/>
+                                                </connections>
+                                            </slider>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="X2r-Oy-2L9" firstAttribute="top" secondItem="5Jy-V2-zPc" secondAttribute="top" constant="5" id="96C-2f-bhU"/>
+                                            <constraint firstItem="FUE-vq-Tq3" firstAttribute="top" secondItem="5Jy-V2-zPc" secondAttribute="top" id="w5l-Wz-F25"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="120" translatesAutoresizingMaskIntoConstraints="NO" id="krU-Sb-XBn">
+                                        <rect key="frame" x="0.0" y="119.5" width="367" height="26"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset High Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjM-9L-ecL">
+                                                <rect key="frame" x="0.0" y="0.0" width="132.5" height="26"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oD-Xw-7dU">
+                                                <rect key="frame" x="252.5" y="0.0" width="114.5" height="26"/>
+                                                <color key="backgroundColor" red="0.48819887639999998" green="0.87395006419999999" blue="0.7655583024" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <rect key="contentStretch" x="1" y="1" width="1" height="1"/>
+                                                <color key="tintColor" red="0.075683329980000005" green="0.1891394106" blue="0.17028774320000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <inset key="contentEdgeInsets" minX="30" minY="4" maxX="30" maxY="4"/>
+                                                <state key="normal" title="Clear">
+                                                    <color key="titleColor" red="0.075683329978421393" green="0.18913941062176165" blue="0.17028774322032714" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="resetHighScorePressed:" destination="Ben-AC-XRi" eventType="touchUpInside" id="Qe1-xt-WVw"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BhG-Mv-9tZ" firstAttribute="top" secondItem="Dse-tl-oG3" secondAttribute="bottom" constant="13.5" id="6fM-Li-aFL"/>
+                            <constraint firstItem="Zay-Nb-nCW" firstAttribute="leading" secondItem="Vig-9F-qnd" secondAttribute="leadingMargin" constant="-12" id="Udk-5c-cku"/>
+                            <constraint firstItem="Dse-tl-oG3" firstAttribute="top" secondItem="Zay-Nb-nCW" secondAttribute="bottom" constant="8" symbolic="YES" id="Ztc-NT-VcD"/>
+                            <constraint firstItem="BhG-Mv-9tZ" firstAttribute="leading" secondItem="nQx-5t-aUg" secondAttribute="leading" constant="4" id="aep-Ce-9Zi"/>
+                            <constraint firstItem="Zay-Nb-nCW" firstAttribute="top" secondItem="nQx-5t-aUg" secondAttribute="top" id="cCG-Ou-Adt"/>
+                            <constraint firstItem="Zay-Nb-nCW" firstAttribute="leading" secondItem="Dse-tl-oG3" secondAttribute="leading" constant="-12" id="e3e-TW-AFw"/>
+                            <constraint firstItem="Dse-tl-oG3" firstAttribute="trailing" secondItem="Vig-9F-qnd" secondAttribute="trailingMargin" id="j8d-NZ-wQT"/>
+                            <constraint firstItem="nQx-5t-aUg" firstAttribute="trailing" secondItem="Zay-Nb-nCW" secondAttribute="trailing" constant="187" id="mYM-Sv-J27"/>
+                            <constraint firstAttribute="trailing" secondItem="BhG-Mv-9tZ" secondAttribute="trailing" constant="4" id="tmc-hC-kmt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nQx-5t-aUg"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="icons8-gears-50" landscapeImage="icons8-gears-50" largeContentSizeImage="icons8-gears-50" selectedImage="icons8-gears-50" id="CTe-rt-wkX"/>
+                    <navigationItem key="navigationItem" id="Ddy-6H-KGD"/>
+                    <connections>
+                        <outlet property="bouncinessControler" destination="8fA-CZ-vNL" id="Ohk-el-iUM"/>
+                        <outlet property="numberOfBallsControler" destination="Dse-tl-oG3" id="lZ4-q6-utq"/>
+                        <outlet property="numberOfBricksLabel" destination="5qR-zl-1vB" id="xtr-Qg-clP"/>
+                        <outlet property="numberofBricksControler" destination="geI-tE-x8H" id="CfO-kr-upo"/>
+                        <outlet property="paddleSizeControler" destination="FUE-vq-Tq3" id="Mf4-e6-P4Z"/>
+                        <outlet property="resetHighScore" destination="0oD-Xw-7dU" id="bh6-Db-efH"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1488.8" y="610.34482758620697"/>
+        </scene>
+        <!--Breakout-->
+        <scene sceneID="VL4-zJ-GNU">
+            <objects>
+                <viewController id="qhD-2j-LtG" customClass="BreakoutGameVC" customModule="Breakout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KWy-3m-iOq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBd-VD-mdh">
+                                <rect key="frame" x="0.0" y="58" width="375" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ugg-NQ-7Dh" appends="YES" id="Ood-fD-hMp"/>
+                                    <outletCollection property="gestureRecognizers" destination="uQc-Wa-hQi" appends="YES" id="ysl-4D-Arr"/>
+                                </connections>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nYb-An-4os">
+                                <rect key="frame" x="32" y="20" width="310" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDl-p2-jlT">
+                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVJ-od-OZg">
+                                                <rect key="frame" x="0.0" y="0.0" width="74.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" red="0.34970739771302295" green="0.87395006419999999" blue="0.78684280357356162" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdy-DB-cLo" userLabel="socreNum">
+                                                <rect key="frame" x="74.5" y="0.0" width="47" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" red="0.34970739769999998" green="0.87395006419999999" blue="0.78684280360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eHZ-jV-lE2">
+                                        <rect key="frame" x="131.5" y="0.0" width="178.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nut-1z-rZF">
+                                                <rect key="frame" x="0.0" y="0.0" width="131.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" red="0.34970739769999998" green="0.87395006419999999" blue="0.78684280360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9O-X3-af8" userLabel="highSocreNum">
+                                                <rect key="frame" x="131.5" y="0.0" width="47" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" red="0.34970739769999998" green="0.87395006419999999" blue="0.78684280360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IBd-VD-mdh" firstAttribute="bottom" secondItem="ju3-qS-sYu" secondAttribute="bottom" id="CbI-cZ-Zuc"/>
+                            <constraint firstItem="nYb-An-4os" firstAttribute="centerX" secondItem="IBd-VD-mdh" secondAttribute="centerX" id="R2p-4N-Pab"/>
+                            <constraint firstAttribute="trailing" secondItem="IBd-VD-mdh" secondAttribute="trailing" id="UQC-DE-2IK"/>
+                            <constraint firstItem="IBd-VD-mdh" firstAttribute="top" secondItem="nYb-An-4os" secondAttribute="bottom" constant="8" symbolic="YES" id="azP-lF-dYg"/>
+                            <constraint firstItem="IBd-VD-mdh" firstAttribute="leading" secondItem="KWy-3m-iOq" secondAttribute="leading" id="bo4-UR-Us8"/>
+                            <constraint firstItem="nYb-An-4os" firstAttribute="top" secondItem="ju3-qS-sYu" secondAttribute="top" id="rcg-8p-Ig4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ju3-qS-sYu"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Breakout" image="icons8-brick-wall-50" landscapeImage="icons8-brick-wall-50" largeContentSizeImage="icons8-brick-wall-50" selectedImage="icons8-brick-wall-50" id="mOC-7N-E31"/>
+                    <connections>
+                        <outlet property="gameView" destination="IBd-VD-mdh" id="aF5-Zo-UDS"/>
+                        <outlet property="highScoreNumLabel" destination="z9O-X3-af8" id="cst-gq-FgP"/>
+                        <outlet property="scoreNumLable" destination="vdy-DB-cLo" id="7Cy-Wz-KcB"/>
+                        <segue destination="vIr-Tl-cOO" kind="showDetail" identifier="breakoutToTVC" id="kOr-3B-wHs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eo1-xf-xie" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="ugg-NQ-7Dh">
+                    <connections>
+                        <action selector="panGest:" destination="qhD-2j-LtG" id="uVt-hB-0HN"/>
+                    </connections>
+                </panGestureRecognizer>
+                <tapGestureRecognizer id="uQc-Wa-hQi">
+                    <connections>
+                        <action selector="tapGest:" destination="qhD-2j-LtG" id="aha-Sf-te7"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1489" y="-127"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4ZR-RM-nKr">
+            <objects>
+                <tabBarController id="vIr-Tl-cOO" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Ecw-YN-J1K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Ben-AC-XRi" kind="relationship" relationship="viewControllers" id="hzp-ax-ae9"/>
+                        <segue destination="qhD-2j-LtG" kind="relationship" relationship="viewControllers" id="7dK-ke-85I"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R5P-IR-8Wf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="578" y="187"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-brick-wall-50" width="25" height="25"/>
+        <image name="icons8-gears-50" width="25" height="25"/>
+    </resources>
+</document>
